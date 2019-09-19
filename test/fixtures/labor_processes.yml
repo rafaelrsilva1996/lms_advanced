@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  process_category: 1
+  process_number: 1
+  distribution_date: 2019-09-19
+  stick: MyString
+  court: MyString
+  movements: MyText
+  status: false
+
+two:
+  process_category: 1
+  process_number: 1
+  distribution_date: 2019-09-19
+  stick: MyString
+  court: MyString
+  movements: MyText
+  status: false

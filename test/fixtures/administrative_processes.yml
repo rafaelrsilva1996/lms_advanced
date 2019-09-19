@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  benefit_type: 1
+  der: MyString
+  age: 1
+  contribution_time: MyString
+  movements: MyText
+  status: false
+
+two:
+  benefit_type: 1
+  der: MyString
+  age: 1
+  contribution_time: MyString
+  movements: MyText
+  status: false

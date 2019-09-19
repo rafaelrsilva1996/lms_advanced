@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Benefit type:</strong>
+  <%= @administrative_process.benefit_type %>
+</p>
+
+<p>
+  <strong>Der:</strong>
+  <%= @administrative_process.der %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @administrative_process.age %>
+</p>
+
+<p>
+  <strong>Contribution time:</strong>
+  <%= @administrative_process.contribution_time %>
+</p>
+
+<p>
+  <strong>Movements:</strong>
+  <%= @administrative_process.movements %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @administrative_process.status %>
+</p>
+
+<%= link_to 'Edit', edit_administrative_process_path(@administrative_process) %> |
+<%= link_to 'Back', administrative_processes_path %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Labor Processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Process category</th>
+      <th>Process number</th>
+      <th>Distribution date</th>
+      <th>Stick</th>
+      <th>Court</th>
+      <th>Movements</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labor_processes.each do |labor_process| %>
+      <tr>
+        <td><%= labor_process.process_category %></td>
+        <td><%= labor_process.process_number %></td>
+        <td><%= labor_process.distribution_date %></td>
+        <td><%= labor_process.stick %></td>
+        <td><%= labor_process.court %></td>
+        <td><%= labor_process.movements %></td>
+        <td><%= labor_process.status %></td>
+        <td><%= link_to 'Show', labor_process %></td>
+        <td><%= link_to 'Edit', edit_labor_process_path(labor_process) %></td>
+        <td><%= link_to 'Destroy', labor_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Labor Process', new_labor_process_path %>
+  </br></br>
+  <%= current_user.email %>
+  </br>
+  <%= link_to "Home", root_path %>
+  </br>
+  <%= link_to "Desconectar", destroy_user_session_path, method: :delete %>
+<% end %>

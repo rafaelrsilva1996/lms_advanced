@@ -1,0 +1,2 @@
+class AdministrativeProcess < ApplicationRecord
+end

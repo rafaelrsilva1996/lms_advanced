@@ -1,0 +1,32 @@
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :delivery_date %>
+    <%= f.date_select :delivery_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linked_process %>
+    <%= f.number_field :linked_process %>
+  </div>
+
+  <div class="field">
+    <%= f.label :task_description %>
+    <%= f.text_area :task_description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

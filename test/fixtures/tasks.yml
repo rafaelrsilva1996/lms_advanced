@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery_date: 2019-09-19
+  linked_process: 1
+  task_description: MyText
+
+two:
+  delivery_date: 2019-09-19
+  linked_process: 1
+  task_description: MyText

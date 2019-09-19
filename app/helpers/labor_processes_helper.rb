@@ -1,0 +1,2 @@
+module LaborProcessesHelper
+end

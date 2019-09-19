@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Process category:</strong>
+  <%= @labor_process.process_category %>
+</p>
+
+<p>
+  <strong>Process number:</strong>
+  <%= @labor_process.process_number %>
+</p>
+
+<p>
+  <strong>Distribution date:</strong>
+  <%= @labor_process.distribution_date %>
+</p>
+
+<p>
+  <strong>Stick:</strong>
+  <%= @labor_process.stick %>
+</p>
+
+<p>
+  <strong>Court:</strong>
+  <%= @labor_process.court %>
+</p>
+
+<p>
+  <strong>Movements:</strong>
+  <%= @labor_process.movements %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @labor_process.status %>
+</p>
+
+<%= link_to 'Edit', edit_labor_process_path(@labor_process) %> |
+<%= link_to 'Back', labor_processes_path %>

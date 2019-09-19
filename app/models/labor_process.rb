@@ -1,0 +1,2 @@
+class LaborProcess < ApplicationRecord
+end
