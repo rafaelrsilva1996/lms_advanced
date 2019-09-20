@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   resources :tasks
   resources :labor_processes
   resources :administrative_processes
