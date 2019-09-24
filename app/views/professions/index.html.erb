@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Professions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profession description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professions.each do |profession| %>
+      <tr>
+        <td><%= profession.profession_description %></td>
+        <td><%= link_to 'Show', profession %></td>
+        <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
+        <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Profession', new_profession_path %>
+  </br></br>
+  <%= current_user.email %>
+  </br>
+  <%= link_to "Home", root_path %>
+  </br>
+  <%= link_to "Desconectar", destroy_user_session_path, method: :delete %>
+<% end %>
