@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190924194022) do
+ActiveRecord::Schema.define(version: 20190929180916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,28 @@ ActiveRecord::Schema.define(version: 20190924194022) do
     t.integer  "age"
     t.string   "email"
     t.boolean  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "cep"
+    t.string   "uf"
+    t.string   "city"
+    t.string   "neighborhood"
+    t.string   "address"
+    t.integer  "number"
+    t.string   "father"
+    t.string   "mother"
+    t.string   "marital_status"
+    t.string   "naturalness"
+    t.string   "uf_naturalness"
+    t.integer  "cpf"
+    t.string   "issuing_organ"
+    t.string   "document_type"
+    t.integer  "contact"
+    t.integer  "scrap_contact"
+    t.integer  "relationship1"
+    t.integer  "relationship2"
+    t.string   "observation"
+    t.integer  "profession_id"
   end
 
   create_table "labor_processes", force: :cascade do |t|
