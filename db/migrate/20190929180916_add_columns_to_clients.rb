@@ -19,6 +19,5 @@ class AddColumnsToClients < ActiveRecord::Migration[5.0]
     add_column :clients, :relationship1, :integer
     add_column :clients, :relationship2, :integer
     add_column :clients, :observation, :string
-    add_column :clients, :profession_id, :integer
   end
 end
