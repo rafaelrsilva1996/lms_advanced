@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190929180916) do
+ActiveRecord::Schema.define(version: 20190929235016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20190929180916) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "client_professions", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "profession_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["client_id"], name: "index_client_professions_on_client_id", using: :btree
+    t.index ["profession_id"], name: "index_client_professions_on_profession_id", using: :btree
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
@@ -33,6 +42,7 @@ ActiveRecord::Schema.define(version: 20190929180916) do
     t.boolean  "status"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "profession_id"
     t.integer  "cep"
     t.string   "uf"
     t.string   "city"
@@ -52,7 +62,6 @@ ActiveRecord::Schema.define(version: 20190929180916) do
     t.integer  "relationship1"
     t.integer  "relationship2"
     t.string   "observation"
-    t.integer  "profession_id"
   end
 
   create_table "labor_processes", force: :cascade do |t|
@@ -93,4 +102,6 @@ ActiveRecord::Schema.define(version: 20190929180916) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "client_professions", "clients"
+  add_foreign_key "client_professions", "professions"
 end
