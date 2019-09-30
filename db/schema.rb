@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190929235016) do
+ActiveRecord::Schema.define(version: 20190930020141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,8 +86,12 @@ ActiveRecord::Schema.define(version: 20190929235016) do
     t.date     "delivery_date"
     t.integer  "linked_process"
     t.text     "task_description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "administrative_processes_id"
+    t.integer  "labor_processes_id"
+    t.index ["administrative_processes_id"], name: "index_tasks_on_administrative_processes_id", using: :btree
+    t.index ["labor_processes_id"], name: "index_tasks_on_labor_processes_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,4 +108,6 @@ ActiveRecord::Schema.define(version: 20190929235016) do
 
   add_foreign_key "client_professions", "clients"
   add_foreign_key "client_professions", "professions"
+  add_foreign_key "tasks", "administrative_processes", column: "administrative_processes_id"
+  add_foreign_key "tasks", "labor_processes", column: "labor_processes_id"
 end
