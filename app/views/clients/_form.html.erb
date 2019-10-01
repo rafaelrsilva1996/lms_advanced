@@ -126,6 +126,12 @@
     <%= f.check_box :status %>
   </div>
 
+  <% @professions.each do |p| %>
+    <%= p.profession_description%>
+    <%= check_box_tag "client_profession_attributes[]", p.id, @client.id %>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

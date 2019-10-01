@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20190930020141) do
     t.boolean  "status"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "profession_id"
     t.integer  "cep"
     t.string   "uf"
     t.string   "city"

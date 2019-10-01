@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_professions, only: [:create, :edit, :new, :update, :destroy]
 
   # GET /clients
   # GET /clients.json
@@ -40,6 +41,7 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
+    p params
     respond_to do |format|
       if @client.update(client_params)
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
@@ -67,8 +69,12 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
     end
 
+    def set_professions
+      @professions = Profession.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :age, :email, :status, :cep, :uf, :city, :neighborhood, :address, :number, :father, :mother, :marital_status, :naturalness, :uf_naturalness, :cpf, :issuing_organ, :document_type, :contact, :scrap_contact, :relationship1, :relationship2, :observation)
+      params.require(:client).permit(:name, :age, :email, :status, :cep, :uf, :city, :neighborhood, :address, :number, :father, :mother, :marital_status, :naturalness, :uf_naturalness, :cpf, :issuing_organ, :document_type, :contact, :scrap_contact, :relationship1, :relationship2, :observation, client_profession_attributes: [:profession_id, :id])
     end
 end
