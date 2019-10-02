@@ -136,3 +136,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= simple_form_for @client do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.button :submit %>
+<% end %>
