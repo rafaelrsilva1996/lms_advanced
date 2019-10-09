@@ -25,5 +25,4 @@ $ sudo docker-compose up
 ```
 
 Acesse a página localhost
-#po
 http://localhost:3000
