@@ -1,6 +1,6 @@
 class ProfessionsController < ApplicationController
   before_action :set_profession, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # GET /professions
   # GET /professions.json
