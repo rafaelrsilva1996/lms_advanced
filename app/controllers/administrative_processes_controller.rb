@@ -1,6 +1,6 @@
 class AdministrativeProcessesController < ApplicationController
   before_action :set_administrative_process, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   # GET /administrative_processes
   # GET /administrative_processes.json

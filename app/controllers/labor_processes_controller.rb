@@ -1,6 +1,6 @@
 class LaborProcessesController < ApplicationController
   before_action :set_labor_process, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   # GET /labor_processes
   # GET /labor_processes.json
