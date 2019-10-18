@@ -24,10 +24,13 @@
   <%= f.input :status %>
   <%= f.button :submit %>
 
-  <% @professions.each do |p| %>
-    <%= p.profession_description%>
-    <%= check_box_tag "client_profession_attributes[]", p.id, @client.id %>
-  <% end %>
+  <%= f.association :professions,
+      label: Profession.model_name.human, as: :check_boxes,
+      collection: @professions,
+      label_method: :profession_description,
+      :multiple => true,
+      class: 'chosen-select'
+    %>
 
 
 <% end %>

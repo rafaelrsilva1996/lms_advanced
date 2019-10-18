@@ -25,6 +25,8 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
+    p "Meus parameters hahahahah_________________________________________"
+    p client_params
     @client = Client.new(client_params)
 
     respond_to do |format|
@@ -75,6 +77,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :age, :email, :status, :cep, :uf, :city, :neighborhood, :address, :number, :father, :mother, :marital_status, :naturalness, :uf_naturalness, :cpf, :issuing_organ, :document_type, :contact, :scrap_contact, :relationship1, :relationship2, :observation, client_profession_attributes: [:profession_id, :id])
+      params.require(:client).permit(:name, :age, :email, :status, :cep, :uf, :city, :neighborhood, :address, :number, :father, :mother, :marital_status, :naturalness, :uf_naturalness, :cpf, :issuing_organ, :document_type, :contact, :scrap_contact, :relationship1, :relationship2, :observation,{:profession_ids=>[]})
     end
 end
