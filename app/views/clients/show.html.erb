@@ -16,6 +16,20 @@
 </p>
 
 <p>
+  <% if @client.client_professions.count > 1 %>
+    <strong>Profissões:</strong>
+  <% else %>
+    <strong>Profissão:</strong>
+  <% end %>
+
+  <% if @client.client_professions.count >= 1 %>
+    <%@client.client_professions.each do |cp| %>
+      <%= cp.profession.profession_description %>
+    <% end %>
+  <%end%>
+</p>
+
+<p>
   <strong>cep:</strong>
   <%= @client.cep %>
 </p>
@@ -115,6 +129,7 @@
   <strong>Status:</strong>
   <%= @client.status %>
 </p>
+
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
