@@ -2,5 +2,12 @@
   <%= f.input :delivery_date %>
   <%= f.input :linked_process %>
   <%= f.input :task_description %>
+
+  <div>
+    <%= f.label :process_number %>
+    <%= f.collection_select(:labor_processes_id, LaborProcess.all, :id, :process_number, prompt: true) %>
+  </div>
+
+
   <%= f.button :submit %>
 <% end %>

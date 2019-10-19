@@ -1,3 +1,3 @@
 class LaborProcess < ApplicationRecord
-  has_many :task
+  has_many :task_labors
 end

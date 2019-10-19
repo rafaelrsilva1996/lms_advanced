@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190930020141) do
+ActiveRecord::Schema.define(version: 20191019193414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,24 @@ ActiveRecord::Schema.define(version: 20190930020141) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "task_administratives", force: :cascade do |t|
+    t.date     "delivery_date"
+    t.text     "task_description"
+    t.integer  "administrative_process_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["administrative_process_id"], name: "index_task_administratives_on_administrative_process_id", using: :btree
+  end
+
+  create_table "task_labors", force: :cascade do |t|
+    t.date     "delivery_date"
+    t.text     "task_description"
+    t.integer  "labor_process_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["labor_process_id"], name: "index_task_labors_on_labor_process_id", using: :btree
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.date     "delivery_date"
     t.integer  "linked_process"
@@ -107,6 +125,8 @@ ActiveRecord::Schema.define(version: 20190930020141) do
 
   add_foreign_key "client_professions", "clients"
   add_foreign_key "client_professions", "professions"
+  add_foreign_key "task_administratives", "administrative_processes"
+  add_foreign_key "task_labors", "labor_processes"
   add_foreign_key "tasks", "administrative_processes", column: "administrative_processes_id"
   add_foreign_key "tasks", "labor_processes", column: "labor_processes_id"
 end

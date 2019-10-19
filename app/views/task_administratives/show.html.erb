@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @task_administrative.delivery_date %>
+</p>
+
+<p>
+  <strong>Task description:</strong>
+  <%= @task_administrative.task_description %>
+</p>
+
+<p>
+  <strong>Administrative process:</strong>
+  <%= @task_administrative.administrative_process.der %>
+</p>
+
+<%= link_to 'Edit', edit_task_administrative_path(@task_administrative) %> |
+<%= link_to 'Back', task_administratives_path %>

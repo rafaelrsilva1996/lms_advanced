@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Task Administratives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Delivery date</th>
+      <th>Task description</th>
+      <th>Administrative process</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_administratives.each do |task_administrative| %>
+      <tr>
+        <td><%= task_administrative.delivery_date %></td>
+        <td><%= task_administrative.task_description %></td>
+        <td><%= task_administrative.administrative_process.der %></td>
+        <td><%= link_to 'Show', task_administrative %></td>
+        <td><%= link_to 'Edit', edit_task_administrative_path(task_administrative) %></td>
+        <td><%= link_to 'Destroy', task_administrative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<% if user_signed_in? %>
+  <%= link_to 'New Task', new_task_path %>
+  </br></br>
+  <%= current_user.email %>
+  </br>
+  <%= link_to "Home", root_path %>
+  </br>
+  <%= link_to "Desconectar", destroy_user_session_path, method: :delete %>
+<% end %>

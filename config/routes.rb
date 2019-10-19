@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :task_labors
+  resources :task_administratives
   resources :professions
   resources :clients
   resources :tasks

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @task_labor.delivery_date %>
+</p>
+
+<p>
+  <strong>Task description:</strong>
+  <%= @task_labor.task_description %>
+</p>
+
+<p>
+  <strong>Labor process:</strong>
+  <%= @task_labor.labor_process.process_number %>
+</p>
+
+<%= link_to 'Edit', edit_task_labor_path(@task_labor) %> |
+<%= link_to 'Back', task_labors_path %>

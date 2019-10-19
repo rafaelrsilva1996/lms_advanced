@@ -1,3 +1,3 @@
 class AdministrativeProcess < ApplicationRecord
-  has_many :task
+  has_many :task_administratives
 end

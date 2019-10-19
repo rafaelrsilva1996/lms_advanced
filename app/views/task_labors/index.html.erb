@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Task Labors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Delivery date</th>
+      <th>Task description</th>
+      <th>Labor process</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_labors.each do |task_labor| %>
+      <tr>
+        <td><%= task_labor.delivery_date %></td>
+        <td><%= task_labor.task_description %></td>
+        <td><%= task_labor.labor_process.process_number %></td>
+        <td><%= link_to 'Show', task_labor %></td>
+        <td><%= link_to 'Edit', edit_task_labor_path(task_labor) %></td>
+        <td><%= link_to 'Destroy', task_labor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+<% if user_signed_in? %>
+  <%= link_to 'New Task', new_task_path %>
+  </br></br>
+  <%= current_user.email %>
+  </br>
+  <%= link_to "Home", root_path %>
+  </br>
+  <%= link_to "Desconectar", destroy_user_session_path, method: :delete %>
+<% end %>
