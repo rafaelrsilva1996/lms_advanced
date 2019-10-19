@@ -13,7 +13,7 @@
   <tbody>
     <% @professions.each do |profession| %>
       <tr>
-        <td><%= profession.profession_description %></td>
+        <td><%= profession.description %></td>
         <td><%= link_to 'Show', profession %></td>
         <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
         <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>

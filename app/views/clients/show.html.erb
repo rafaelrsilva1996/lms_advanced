@@ -24,7 +24,7 @@
 
   <% if @client.client_professions.count >= 1 %>
     <%@client.client_professions.each do |cp| %>
-      <%= cp.profession.profession_description %>
+      <%= cp.profession.description %>
     <% end %>
   <%end%>
 </p>

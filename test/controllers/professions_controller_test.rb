@@ -17,7 +17,7 @@ class ProfessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create profession" do
     assert_difference('Profession.count') do
-      post professions_url, params: { profession: { profession_description: @profession.profession_description } }
+      post professions_url, params: { profession: { description: @profession.description } }
     end
 
     assert_redirected_to profession_url(Profession.last)
@@ -34,7 +34,7 @@ class ProfessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update profession" do
-    patch profession_url(@profession), params: { profession: { profession_description: @profession.profession_description } }
+    patch profession_url(@profession), params: { profession: { description: @profession.description } }
     assert_redirected_to profession_url(@profession)
   end
 

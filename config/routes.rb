@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :task_administratives
   resources :professions
   resources :clients
-  resources :tasks
   resources :labor_processes
   resources :administrative_processes
   devise_for :users

@@ -70,6 +70,6 @@ class ProfessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profession_params
-      params.require(:profession).permit(:profession_description)
+      params.require(:profession).permit(:description)
     end
 end
