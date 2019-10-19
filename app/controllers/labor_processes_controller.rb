@@ -1,7 +1,7 @@
 class LaborProcessesController < ApplicationController
   before_action :set_labor_process, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!
-  
+
   # GET /labor_processes
   # GET /labor_processes.json
   def index
@@ -70,6 +70,6 @@ class LaborProcessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def labor_process_params
-      params.require(:labor_process).permit(:process_category, :process_number, :distribution_date, :stick, :court, :movements, :status)
+      params.require(:labor_process).permit(:process_category, :process_number, :distribution_date, :stick, :court, :movements, :status, :client_id)
     end
 end

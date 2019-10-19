@@ -6,5 +6,12 @@
   <%= f.input :court %>
   <%= f.input :movements %>
   <%= f.input :status %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.collection_select(:client_id, Client.all, :id, :name, prompt: true) %>
+  </div>
+
+
   <%= f.button :submit %>
 <% end %>
